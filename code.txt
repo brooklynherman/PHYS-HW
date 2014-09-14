@@ -17,3 +17,4 @@ fit N(x) 'C:\Users\Jaken\Desktop\data.dat' using 1:2 via A, w, xave
 plot 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 with errorbars
 fit N(x) 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 via A, w, xave
 plot 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 with errorbars, N(x)
+
