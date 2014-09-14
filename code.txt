@@ -1,0 +1,19 @@
+#the graph with data
+set title 'Data with fit and error bars'
+plot 'C:\Users\Jaken\Desktop\data.dat'
+set xlabel "Temperature T [deg Cels.]"
+set ylabel "Density [g/cm3]"
+set key below
+
+#graph with line of fit
+load 'C:\Users\Jaken\Documents\psychic-octo-bear\gauss.fnc'
+show functions
+plot 'C:\Users\Jaken\Desktop\data.dat', N(x)
+fit N(x) 'C:\Users\Jaken\Desktop\data.dat' via A, w, xave
+
+#graph with line of fit and error bars
+plot 'C:\Users\Jaken\Desktop\data.dat', N(x)
+fit N(x) 'C:\Users\Jaken\Desktop\data.dat' using 1:2 via A, w, xave
+plot 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 with errorbars
+fit N(x) 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 via A, w, xave
+plot 'C:\Users\Jaken\Desktop\data.dat' using 1:2:3 with errorbars, N(x)
